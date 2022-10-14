@@ -4,7 +4,6 @@ from .models import Places, Location
 from .serializers import PlacesSerializer, LocationSerializer
 import requests
 from django.http import JsonResponse
-from django_filters import rest_framework as filters
 from decouple import config
 
 # Create your views here.

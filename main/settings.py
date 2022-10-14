@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     # 3rd party
     'corsheaders',
     "rest_framework",
-    'django_filters',
 
     # my apps
     'menu',
