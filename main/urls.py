@@ -20,5 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('menu/', include('menu.urls')),
     path('opentripmap/', include('opentripmap.urls')),
+    path('product/', include('products.urls')),
+
+    path('auth/', include('user_auth.urls')),
 
 ]
