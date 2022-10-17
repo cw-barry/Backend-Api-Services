@@ -10,7 +10,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class ImagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Images
-        fields = ("name")
+        fields = ("image", )
 
 
 class ProductsSerializer(serializers.ModelSerializer):
@@ -29,12 +29,34 @@ class ProductsSerializer(serializers.ModelSerializer):
         product = Products.objects.create(**validated_data, category=category.get("id"))
 
         for image in images:
-            item = Images.objects.create(image, product=item.product)
+            item = Images.objects.create(image, product=product)
             # item.product = product
             # item.save()
 
         return product
 
+    def validate(self, data):
+        print(type(data))
+        return data
+
+class BulkProductSerializer(serializers.Serializer):
+    products = serializers.ListField()
+
+    def create(self, validated_data):
+        data = validated_data.pop("products")
+        for item in data:
+            images = item.pop("images")
+            category = item.pop("category")
+            item.pop("id")
+
+            product = Products.objects.create(**item, category_id=category.get("id"))
+
+            for image in images:
+                Images.objects.create(image=image, product=product)
+                # item.product = product
+                # item.save()
+
+        return {"products": data}
 
 
 
