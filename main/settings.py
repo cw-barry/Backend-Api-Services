@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'dj_rest_auth',
     'rest_framework_simplejwt',
+    'django_filters',
 
     # my apps
     'menu',

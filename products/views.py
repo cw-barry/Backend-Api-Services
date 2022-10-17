@@ -5,7 +5,8 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .permissions import IsAdminOrReadonly
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, filters
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 class CategoryView(ModelViewSet):
@@ -17,6 +18,9 @@ class ProductView(ModelViewSet):
     serializer_class = ProductsSerializer
     queryset = Products.objects.all()
     permission_classes = [IsAdminOrReadonly]
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter,)
+    search_fields=['title']
+    filterset_fields = ['category']
 
 @api_view(['POST'])
 def bulk_create_api(request):
