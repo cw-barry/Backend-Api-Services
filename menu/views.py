@@ -40,7 +40,7 @@ menu_data = [
     "category": 'lunch',
     "price": 22.99,
     "img": './images/item-5.jpeg',
-    "des": "franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up ",
+    "desc": "franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up ",
   },
   {
     "id": 6,
