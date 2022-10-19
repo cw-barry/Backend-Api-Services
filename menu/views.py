@@ -32,7 +32,7 @@ menu_data = [
     "category": 'breakfast',
     "price": 20.99,
     "img": './images/item-4.jpeg',
-    "des": "Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut",
+    "desc": "Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut",
   },
   {
     "id": 5,
@@ -48,7 +48,7 @@ menu_data = [
     "category": 'shakes',
     "price": 18.99,
     "img": './images/item-6.jpeg',
-    "des": "Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday",
+    "desc": "Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday",
   },
   {
     "id": 7,
@@ -56,7 +56,7 @@ menu_data = [
     "category": 'breakfast',
     "price": 8.99,
     "img": './images/item-7.jpeg',
-    "des": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird ",
+    "desc": "carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird ",
   },
   {
     "id": 8,
@@ -64,7 +64,7 @@ menu_data = [
     "category": 'lunch',
     "price": 12.99,
     "img": './images/item-8.jpeg',
-    "des": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  ",
+    "desc": "on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  ",
   },
   {
     "id": 9,
@@ -72,7 +72,7 @@ menu_data = [
     "category": 'shakes',
     "price": 16.99,
     "img": './images/item-9.jpeg',
-    "des": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
+    "desc": "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
   },
 ]
 
