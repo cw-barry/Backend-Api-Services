@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'opentripmap',
     "products",
     "user_auth",
+    "images"
 
 ]
 
