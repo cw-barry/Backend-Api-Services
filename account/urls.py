@@ -6,7 +6,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
 
-    path('password/reset/confirm', PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
+    path('password/reset/confirm/<str:uidb64>/<str:token>/', PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
     path("", include('dj_rest_auth.urls')),
     path('register/', RegisterView.as_view(), name="register"),
     # path('list/', ListUserView.as_view(), name="list"),
