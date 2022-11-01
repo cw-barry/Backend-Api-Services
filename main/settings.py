@@ -51,8 +51,9 @@ INSTALLED_APPS = [
     'menu',
     'opentripmap',
     "products",
-    "user_auth",
-    "images"
+    "account",
+    "images",
+    "blog"
 
 ]
 
@@ -154,5 +155,5 @@ REST_FRAMEWORK = {
 }
 
 REST_AUTH_SERIALIZERS = {
-    'TOKEN_SERIALIZER': 'user_auth.serializers.CustomTokenSerializer',
+    'TOKEN_SERIALIZER': 'account.serializers.CustomTokenSerializer',
 }

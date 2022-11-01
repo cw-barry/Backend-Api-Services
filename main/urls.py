@@ -23,6 +23,6 @@ urlpatterns = [
     path('opentripmap/', include('opentripmap.urls')),
     path('product/', include('products.urls')),
 
-    path('auth/', include('user_auth.urls')),
+    path('account/', include('account.urls')),
 
 ]
