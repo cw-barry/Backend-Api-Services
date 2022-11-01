@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveAPIView
+from rest_framework.views import APIView
 from django.contrib.auth.models import User
 from .serializers import RegistrationSerializer, UserSerializer, CustomTokenSerializer
 from rest_framework.response import Response
@@ -10,7 +11,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 # Create your views here.
 
-class RegisterView(ListCreateAPIView):
+class RegisterView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegistrationSerializer
 
@@ -44,3 +45,10 @@ class RegisterView(ListCreateAPIView):
     #     serializer.save()
 
 
+# class ListUserView(APIView):
+#     def get(self, request, format=None):
+#         """
+#         Return a list of all users.
+#         """
+#         data = [[user.username, user.password] for user in User.objects.all()]
+#         return Response(data)
