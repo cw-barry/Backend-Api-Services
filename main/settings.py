@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     "products",
     "account",
     "images",
-    "blog"
+    "blog",
+    "taskrater"
 
 ]
 
