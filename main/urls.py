@@ -28,6 +28,7 @@ urlpatterns = [
 
     path('account/', include('account.urls')),
     path('blog/', include('blog.urls')),
+    path('taskrate/',include('taskrater.urls'))
 
 ]
 
