@@ -74,7 +74,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUSTED_ORIGINS = ['https://*.fullstack.clarusway.com', 'https://cwbarry.pythonanywhere.com']
+CSRF_TRUSTED_ORIGINS = ['https://*.fullstack.clarusway.com', 'https://cwbarry.pythonanywhere.com', 'http://localhost:3000']
 CORS_ALLOW_CREDENTIALS = True
 CORS_EXPOSE_HEADERS = (
     'Access-Control-Allow-Origin: *',
