@@ -32,7 +32,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(auto_now_add = True)
     last_updated = models.DateTimeField(auto_now=True)
     slug = models.SlugField(blank=True)
-    status = models.CharField(max_length=1, choices = OPTIONS, default='d')
+    status = models.CharField(max_length=1, choices = OPTIONS, default='p')
 
     def __str__(self):
         return self.title
