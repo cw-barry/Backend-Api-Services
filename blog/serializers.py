@@ -21,7 +21,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     author = serializers.StringRelatedField()
     category = serializers.StringRelatedField()
-    category_id = serializers.IntegerField()
+    category_id = serializers.IntegerField(required=False)
     comments = CommentSerializer(many=True, read_only=True)
 
     has_liked = serializers.SerializerMethodField()
