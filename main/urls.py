@@ -51,7 +51,6 @@ urlpatterns = [
 
     path('account/', include('account.urls')),
     path('blog/', include('blog.urls')),
-    path('taskrate/',include('taskrater.urls')),
     path('todo/',include('todo.urls')),
     path('contacts/',include('contacts.urls')),
 
