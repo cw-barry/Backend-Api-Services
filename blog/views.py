@@ -25,7 +25,8 @@ class PostViewSet(ModelViewSet):
   
     def get_object(self):
         obj = super().get_object()
-        PostView.objects.get_or_create(user=self.request.user, post=obj)
+        if (self.request.user.id):
+            PostView.objects.get_or_create(user=self.request.user, post=obj)
         return obj
 
     def perform_create(self, serializer):
