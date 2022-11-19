@@ -17,7 +17,7 @@ class PostViewSet(ModelViewSet):
     pagination_class = PostPageNumberPagination
     serializer_class = PostSerializer
     queryset = Post.objects.filter(status="p")
-    pk_url_kwarg = "slug"
+    lookup_field = 'slug'
     
 
     def get_permissions(self):
