@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "blog",
     "taskrater",
     "todo",
+    "simple_todo",
     "contacts",
     "students"
 
