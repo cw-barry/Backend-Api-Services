@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import Todo
-from .serializers import TodoSerializer
+from .serializers import SimpleTodoSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
@@ -13,12 +13,12 @@ def home(request):
 @api_view(["GET"])
 def TodoList(request):
     queryset = Todo.objects.all()
-    serializer = TodoSerializer(queryset, many = True)
+    serializer = SimpleTodoSerializer(queryset, many = True)
     return Response(serializer.data)
 
 @api_view(["POST"])
 def todo_add(request):
-    serializer = TodoSerializer(data=request.data)
+    serializer = SimpleTodoSerializer(data=request.data)
 
     if serializer.is_valid():
         serializer.save()
@@ -30,10 +30,10 @@ def todo_add(request):
 def todo_list_add(request):
     if request.method == "GET":
         queryset = Todo.objects.all()
-        serializer = TodoSerializer(queryset, many = True)
+        serializer = SimpleTodoSerializer(queryset, many = True)
         return Response(serializer.data)
     elif request.method == "POST":
-        serializer = TodoSerializer(data=request.data)
+        serializer = SimpleTodoSerializer(data=request.data)
 
         if serializer.is_valid():
             serializer.save()
@@ -45,11 +45,11 @@ def todo_list_add(request):
 def todo_detail(request, pk):
     qs = Todo.objects.get(pk = pk)
     if request.method == "GET":
-        serializer = TodoSerializer(qs)
+        serializer = SimpleTodoSerializer(qs)
         return Response(serializer.data)
 
     elif request.method == "PUT":
-        serializer = TodoSerializer(instance=qs,data=request.data)
+        serializer = SimpleTodoSerializer(instance=qs,data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -57,7 +57,7 @@ def todo_detail(request, pk):
         return Response(serializer.errors)
 
     elif request.method == "PATCH":
-        serializer = TodoSerializer(instance=qs,data=request.data, partial = True)
+        serializer = SimpleTodoSerializer(instance=qs,data=request.data, partial = True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -70,15 +70,15 @@ def todo_detail(request, pk):
 
 class TodoListCreate(ListCreateAPIView):
     queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
+    serializer_class = SimpleTodoSerializer
 
     # def perform_create(self, serializer):
     #     serializer.save(user = self.request.user)
 
 class TodoDetail(RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
+    serializer_class = SimpleTodoSerializer
 
 class TodoAllOperations(ModelViewSet):
     queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
+    serializer_class = SimpleTodoSerializer
