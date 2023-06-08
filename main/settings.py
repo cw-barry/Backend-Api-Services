@@ -60,7 +60,8 @@ INSTALLED_APPS = [
     "todo",
     "simple_todo",
     "contacts",
-    "students"
+    "students",
+    "practice"
 
 ]
 
