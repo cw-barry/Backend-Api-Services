@@ -17,7 +17,7 @@ class CategoryView(ModelViewSet):
 class ProductView(ModelViewSet):
     serializer_class = ProductsSerializer
     queryset = Products.objects.all()
-    permission_classes = [IsAdminOrReadonly]
+    # permission_classes = [IsAdminOrReadonly]
     filter_backends = (DjangoFilterBackend, filters.SearchFilter,)
     search_fields=['title']
     filterset_fields = ['category']
