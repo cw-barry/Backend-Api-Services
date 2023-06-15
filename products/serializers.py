@@ -36,6 +36,27 @@ class ProductsSerializer(serializers.ModelSerializer):
             # item.save()
 
         return product
+    
+    def update(self, instance, validated_data):
+        images = validated_data.pop("images")
+        category = validated_data.pop("category_id")
+        print(validated_data)
+
+        # product = Products.objects.create(**validated_data)
+        # product = Products.objects.create(**validated_data, category=Category.objects.get(id=category))
+        print(instance)
+        instance.title = validated_data.get("title")
+        instance.price = validated_data.get("price")
+        instance.description = validated_data.get("description")
+        instance.category = Category.objects.get(id=category)
+
+        for image in images:
+            item = Images.objects.create(image=image["image"], product=instance)
+            # item.product = product
+            # item.save()
+
+        instance.save()
+        return instance
 
     def validate(self, data):
         print(type(data))
@@ -59,6 +80,7 @@ class BulkProductSerializer(serializers.Serializer):
                 # item.save()
 
         return {"products": data}
+
 
 
 
