@@ -61,7 +61,8 @@ INSTALLED_APPS = [
     "simple_todo",
     "contacts",
     "students",
-    "practice"
+    "practice",
+    "personnel",
 
 ]
 

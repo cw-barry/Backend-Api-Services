@@ -24,9 +24,10 @@ class ProductsSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         images = validated_data.pop("images")
-        category = validated_data.pop("category")
+        # category = validated_data.pop("category_id")
 
-        product = Products.objects.create(**validated_data, category=category.get("id"))
+        product = Products.objects.create(**validated_data, )
+        # product = Products.objects.create(**validated_data, category=category.get("id"))
 
         for image in images:
             item = Images.objects.create(image, product=product)
