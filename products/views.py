@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from .models import Category, Products
-from .serializers import CategorySerializer, ProductsSerializer, BulkProductSerializer
+from .serializers import ProductCategorySerializer, ProductsSerializer, BulkProductSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .permissions import IsAdminOrReadonly
 from rest_framework.decorators import api_view
@@ -10,7 +10,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 class CategoryView(ModelViewSet):
-    serializer_class = CategorySerializer
+    serializer_class = ProductCategorySerializer
     queryset = Category.objects.all()
     permission_classes = [IsAdminOrReadonly]
 

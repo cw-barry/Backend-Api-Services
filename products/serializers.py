@@ -2,7 +2,7 @@ from unicodedata import category
 from rest_framework import serializers
 from .models import Category, Products, Images
 
-class CategorySerializer(serializers.ModelSerializer):
+class ProductCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ("id","name","image")

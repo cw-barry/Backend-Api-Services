@@ -18,5 +18,5 @@ class TodoView(ModelViewSet):
     def get_queryset(self):
         if self.request.user.is_staff:
             return super().get_queryset()
-        else:
+        elif self.request.user:
             return Todo.objects.filter(user = self.request.user)
