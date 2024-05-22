@@ -52,6 +52,9 @@ class Post(models.Model):
     @property
     def comments(self):
         return self.comment_set.all()
+    
+    class Meta:
+        ordering = ["-id"]
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
