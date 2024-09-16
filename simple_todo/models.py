@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Todo(models.Model):
     task = models.CharField(max_length=20)
-    description = models.TextField()
+    description = models.TextField(default="No Description")
     PRIORITY_OPTIONS = (
         ("H","High"),
         ("M","Medium"),
