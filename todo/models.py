@@ -9,7 +9,7 @@ class Todo(models.Model):
     ('I', 'In-Progress')
 ]
     title = models.CharField(max_length=50)
-    status = models.CharField(max_length=30, choices=status_choices)
+    status = models.CharField(max_length=30, choices=status_choices, default='P')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
